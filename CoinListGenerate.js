@@ -44,21 +44,24 @@ async function fetchData(num) {
 const result = await fetchData(1)
 console.log(result)
 
-// async function writeToFile() {
-//     try {
-//         const coinNum = await getCoinNum();
-//         const symbols = await fetchData(getCoinNum) //array
+async function writeToFile() {
+    try {
+        const coinNum = await getCoinNum();
+        const symbols = await fetchData(getCoinNum) //array
 
-//         const result = sortArray(symbols)
-//         await fs.promises.writeFile('coinlist.txt', result.join('\n'))
+        const result = sortArray(symbols)
+        await fs.promises.writeFile('coinlist.txt', result.join('\n'))
 
-//         console.log('New file has been created')
-//     } catch (err) {
-//         console.error(err)
-//     }
-// }
+        console.log('New file has been created')
+    } catch (err) {
+        console.error(err)
+    }
+}
 
-// writeToFile();
+writeToFile();
+
+// const result = await fetchData(1) // 1 page = 100 coins
+// console.log(result)
 
 
 
